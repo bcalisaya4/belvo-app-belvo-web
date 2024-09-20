@@ -3,6 +3,7 @@ html{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
 
 }
 body{
@@ -42,6 +43,7 @@ body{
 .institutions_container_table{
     display: flex;
     justify-content: center;
+    overflow-x: auto;
 }
 .institutions_table{
     max-width: 1400px;
@@ -49,6 +51,7 @@ body{
 }
 .institutions_table_title{
     margin: 40px;
+    overflow-x: auto;
 }
 
 .header {
