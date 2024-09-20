@@ -11,7 +11,7 @@
                         <el-input v-model="formState.email" placeholder="Correo Electronico"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-input v-model="formState.password" placeholder="Contraseña"></el-input>
+                        <el-input  type="password"  v-model="formState.password" placeholder="Contraseña"></el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button @click="onSubmit" style="width:100%; color: #FFF; background-color: #409EFF; border-color: #409EFF">Registrarse</el-button>
