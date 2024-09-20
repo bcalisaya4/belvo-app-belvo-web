@@ -1,7 +1,6 @@
-FROM node:16.19
+FROM node:18
 WORKDIR /app
 COPY package.json /app
-COPY package-lock.json /app
 RUN yarn install
 #RUN npm run build
 COPY . /app
