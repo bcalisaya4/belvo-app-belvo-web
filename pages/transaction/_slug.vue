@@ -9,21 +9,29 @@
       <div class="institutions_table_title">
         <el-page-header @back="goBack" content="Transacciones">
         </el-page-header>
+        <div style="display: flex; justify-content: center ; width:100%;">
+          <h1 style="display: block; font-size:40px; color:#333333">BALANCE : {{balance}}</h1>
+        </div>
       </div>
+      
       <div class="institutions_container_table">
         <div class="institutions_table">
           <el-table v-loading="loading" :data="transactions" stripe style="width: 100%">
-            <el-table-column prop="agency" label="Agencia">
+            <el-table-column prop="id" label="Id">
             </el-table-column>
             <el-table-column prop="category" label="Categoria" width="180">
             </el-table-column>
+            <el-table-column prop="description" label="Descripcion" width="150">
+            </el-table-column>
+            <el-table-column prop="status" label="Estado" width="150">
+            </el-table-column>
+            <el-table-column prop="type" label="Tipo" width="120">
+            </el-table-column>
             <el-table-column prop="currency" label="Moneda">
             </el-table-column>
-            <el-table-column prop="name" label="Nombre" width="180">
+            <el-table-column prop="balance" label="Balance">
             </el-table-column>
-            <el-table-column prop="number" label="Numero">
-            </el-table-column>
-            <el-table-column prop="type" label="Tipo" width="150">
+            <el-table-column prop="amount" label="Cantidad">
             </el-table-column>
           </el-table>
         </div>
@@ -42,7 +50,7 @@
       }
     },
       computed:{
-          ...mapState('transaction',['transactions'])
+          ...mapState('transaction',['transactions','balance'])
       },
       async mounted () {
           this.init()

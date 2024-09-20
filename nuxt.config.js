@@ -1,5 +1,12 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr: false,
+
+  server: {
+    port: 80,
+    host: '0.0.0.0' // default: localhost
+  },
+  
   head: {
     title: 'belvo-app-belvo-web',
     htmlAttrs: {

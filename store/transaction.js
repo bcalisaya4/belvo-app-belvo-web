@@ -2,6 +2,7 @@ const transaction = {
     store: {
         transaction: null,
         transactions: [],
+        balance: null,
     },
     actions: {
         async getTransactions({ commit }, ) {
@@ -16,9 +17,8 @@ const transaction = {
         async getTransactionsForAccount({ commit },account_id ) {
             try {
                 const {data} = await this.$axios.get(`transactions?account_id=${account_id}`);
-                console.log("data")
-                console.log(data)
                 await commit("setTransactions", data.data);
+                await commit("setBalance", data.balance);
             } catch (error) {
                 console.log(error)
                 this.$message.error(`${error.response.data}`);
@@ -27,6 +27,7 @@ const transaction = {
     },
     mutations:{
         setTransactions: (state, payload) => (state.transactions = payload),
+        setBalance: (state, payload) => (state.balance = payload),
     }
 };
 
